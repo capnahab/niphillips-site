@@ -1,17 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{% block title %}Nick Phillips{% endblock %}</title>
 
     <link rel="stylesheet" href="/css/style.css">
+    <script defer src="/js/theme.js"></script>
 </head>
 
 <body>
+    <button id="theme-toggle" aria-label="Toggle theme">☾</button>
+
     <main class="container">
-        {% block content %}
-        {% endblock %}
+        {% block content %}{% endblock %}
     </main>
 </body>
 </html>
