@@ -1,19 +1,45 @@
+:root {
+    --bg: #f8f9fa;
+    --text: #222;
+    --muted: #666;
+    --link: #1f4f7a;
+    --button-bg: #ffffff;
+    --button-border: #ddd;
+}
+
+html[data-theme="dark"] {
+    --bg: #111316;
+    --text: #f2f2f2;
+    --muted: #b8b8b8;
+    --link: #8ab4f8;
+    --button-bg: #1b1f24;
+    --button-border: #333;
+}
+
 body {
+    margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-    max-width: 900px;
+    background: var(--bg);
+    color: var(--text);
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.container {
+    max-width: 1000px;
     margin: 0 auto;
-    padding: 2rem;
     text-align: center;
-    line-height: 1.6;
+    padding: 3rem 1rem;
 }
 
 h1 {
-    font-size: 3rem;
-    margin-bottom: 0.2rem;
+    font-size: 3.5rem;
+    margin-bottom: 0.5rem;
 }
 
 .subtitle {
-    color: #666;
+    color: var(--muted);
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
 }
 
 .video iframe {
@@ -21,4 +47,33 @@ h1 {
     max-width: 900px;
     aspect-ratio: 16 / 9;
     border: none;
+}
+
+nav {
+    margin-top: 2rem;
+}
+
+nav a {
+    margin: 0 1rem;
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+#theme-toggle {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    width: 2.4rem;
+    height: 2.4rem;
+    border-radius: 50%;
+    border: 1px solid var(--button-border);
+    background: var(--button-bg);
+    color: var(--text);
+    font-size: 1.2rem;
+    cursor: pointer;
 }
